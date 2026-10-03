@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://boq2fi3320hbq"
+path="res://.godot/imported/aid-defibrillator-red.obj-f87b11be4583dc1df8c75d3a0dea072b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/aid-defibrillator-red.obj-f87b11be4583dc1df8c75d3a0dea072b.mesh"]
+
+source_file="res://assets/kenney-assets-compilado-v0.2/kenney-assets-compilado-v0.2/kenney_mini-characters/Models/OBJ format/aid-defibrillator-red.obj"
+dest_files=["res://.godot/imported/aid-defibrillator-red.obj-f87b11be4583dc1df8c75d3a0dea072b.mesh", "res://.godot/imported/aid-defibrillator-red.obj-f87b11be4583dc1df8c75d3a0dea072b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

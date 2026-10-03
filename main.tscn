@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c3jy2sljynge3"]
+
+[ext_resource type="Script" uid="uid://bfwbe2ydyda5f" path="res://node_3d.gd" id="1_ig7tw"]
+
+[node name="Node3D" type="Node3D" unique_id=193622705]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4756708, 0.6156001, 0.39242077)
+script = ExtResource("1_ig7tw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=236116988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03791094, 0, 0)
