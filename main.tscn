@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://durphus0t8u0c" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-g.glb" id="4_272bh"]
 [ext_resource type="PackedScene" uid="uid://noih6obyx2xu" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-b.glb" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c6iuxp8revw3f" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/tree-large.glb" id="6_kek77"]
+[ext_resource type="PackedScene" uid="uid://76m2csx3d0v5" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-a.glb" id="7_272bh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
 size = Vector3(0.7982398, 0.020736694, 6.231862)
@@ -19,6 +20,10 @@ size = Vector3(0.84251237, 0.7468643, 1.2635354)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gy4"]
 radius = 0.123046875
 height = 0.7972412
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d1tgx"]
+radius = 0.0390625
+height = 0.12939453
 
 [node name="Nana(principal)" type="Node3D" unique_id=193622705]
 
@@ -129,6 +134,12 @@ transform = Transform3D(0.999451, 1.0521502e-11, 0.033135634, -1.7460935e-10, 1.
 [node name="fence3" parent="cenario/Cerca8" unique_id=1341526529 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(0.9994513, 2.1485362e-11, 0.033135653, -4.3654386e-10, 1.000001, 1.48996175e-08, -0.033135634, 7.451148e-09, 0.9994508, -1.1001042, -0.018377064, 0.8835106)
 
+[node name="fence4" parent="cenario/Cerca8" unique_id=598546019 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.052266404, 0.02198923, -0.9983918, -0.022035765, 0.99954134, 0.02086093, 0.99839103, 0.020909999, 0.052726906, -1.8146166, -0.0153661985, 0.75561285)
+
+[node name="fence5" parent="cenario/Cerca8" unique_id=1237703108 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.052266408, 0.021989234, -0.998392, -0.022035768, 0.9995415, 0.020860933, 0.99839115, 0.02091, 0.05272691, 4.344683, -0.0153662, 0.6604035)
+
 [node name="Cerca9" type="StaticBody3D" parent="cenario" unique_id=1925210266]
 transform = Transform3D(-0.015452357, 0.021667361, -0.99964577, 0.0003348905, 0.99976516, 0.021664772, 0.99988043, 4.1996705e-11, -0.015455983, 0.49655098, 0.010961652, -1.6901582)
 
@@ -144,6 +155,12 @@ transform = Transform3D(0.9994512, 3.644219e-11, 0.03313565, -3.783362e-10, 1.00
 
 [node name="fence3" parent="cenario/Cerca9" unique_id=982530220 instance=ExtResource("2_0xm2m")]
 transform = Transform3D(0.9994513, 2.1485362e-11, 0.033135653, -4.3654386e-10, 1.000001, 1.48996175e-08, -0.033135634, 7.451148e-09, 0.9994508, -1.1001042, -0.018377064, 0.8835106)
+
+[node name="fence5" parent="cenario/Cerca9" unique_id=560989292 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.052266404, 0.02198923, -0.9983918, -0.022035765, 0.99954134, 0.02086093, 0.99839103, 0.020909999, 0.052726906, -1.3648516, -0.00527231, 0.28285718)
+
+[node name="fence6" parent="cenario/Cerca9" unique_id=1935549293 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.052266408, 0.021989234, -0.998392, -0.022035768, 0.9995415, 0.020860933, 0.99839115, 0.02091, 0.05272691, 4.7944484, -0.00527231, 0.18764776)
 
 [node name="Cerca14" type="StaticBody3D" parent="cenario" unique_id=1642715923]
 transform = Transform3D(-0.015452357, 0.021667361, -0.99964577, 0.0003348905, 0.99976516, 0.021664772, 0.99988043, 4.1996705e-11, -0.015455983, 0.49655098, 0.010961652, -3.5020175)
@@ -226,3 +243,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3552246, 0, -1.2884369)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/Arvore" unique_id=614057979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012861252, 0.3858621, 0)
 shape = SubResource("CapsuleShape3D_17gy4")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1215585501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1931152, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=218670927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.088976, 0.06904161, -0.8385627)
+shape = SubResource("CapsuleShape3D_d1tgx")
+
+[node name="character-female-a2" parent="CharacterBody3D" unique_id=1193398931 instance=ExtResource("7_272bh")]
+transform = Transform3D(-0.008376876, 0, -0.15792137, 0, 0.15371925, 0, -0.17820698, 0, 0.007423317, -2.0847168, 0.008666992, -0.83917236)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1760697465]
+transform = Transform3D(-0.12309548, -0.498163, 0.8583013, 0, 0.86487883, 0.50198066, -0.99239486, 0.06179155, -0.10646267, -1.9099121, 0.13226318, -0.829422)
