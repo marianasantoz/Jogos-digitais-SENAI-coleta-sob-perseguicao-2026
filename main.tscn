@@ -9,6 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://76m2csx3d0v5" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-a.glb" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://bep3l2760di77" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="8_5vw27"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5vw27"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_kek77"]
+sky_material = SubResource("ProceduralSkyMaterial_5vw27")
+
+[sub_resource type="Environment" id="Environment_4c57u"]
+background_mode = 2
+sky = SubResource("Sky_kek77")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
 size = Vector3(0.7982398, 0.020736694, 6.231862)
 
@@ -31,6 +42,13 @@ radius = 0.048339844
 height = 0.14624023
 
 [node name="Nana(principal)" type="Node3D" unique_id=193622705]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1997551816]
+environment = SubResource("Environment_4c57u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1898232247]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="cenario" type="Node3D" parent="." unique_id=684384684]
 
