@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://c3jy2sljynge3"]
 
 [ext_resource type="PackedScene" uid="uid://c7toqjkegfqhl" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dv4cg0sxc6lfr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
-size = Vector3(0.20779419, 0.016784668, 0.41296387)
+size = Vector3(0.551846, 0.020736694, 3.1427803)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
+size = Vector3(0.475708, 0.2716999, 0.07611084)
 
 [node name="Nana(principal)" type="Node3D" unique_id=193622705]
 
@@ -12,7 +16,18 @@ size = Vector3(0.20779419, 0.016784668, 0.41296387)
 [node name="Rua" type="StaticBody3D" parent="cenario" unique_id=644287707]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/Rua" unique_id=1077249597]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.556511e-06, 0.0074768066, -0.0012817383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0031375438, 0.008705139, -0.0001219511)
 shape = SubResource("BoxShape3D_d1tgx")
 
 [node name="path-long2" parent="cenario/Rua" unique_id=1690022151 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(2.6422908, 0, 0, 0, 1.5720742, 0, 0, 0, 7.808341, -5.3838485e-06, 0, 0.0011159044)
+
+[node name="Cerca" type="StaticBody3D" parent="cenario" unique_id=374174171]
+transform = Transform3D(-0.015452357, 0.021667361, -0.99964577, 0.0003348905, 0.99976516, 0.021664772, 0.99988043, 4.1996705e-11, -0.015455983, -0.21695, 0.010961652, 0.2053496)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cenario/Cerca" unique_id=1637693183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00018310547, 0.13484287, 9.1552734e-05)
+shape = SubResource("BoxShape3D_sx1ah")
+
+[node name="fence2" parent="cenario/Cerca" unique_id=2059080511 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.9994508, 0, 0.033135623, 0, 1, 0, -0.033135623, 0, 0.9994508, 0.00028525293, 0, 0.018453896)
