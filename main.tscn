@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://noih6obyx2xu" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-b.glb" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c6iuxp8revw3f" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/tree-large.glb" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://76m2csx3d0v5" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-a.glb" id="7_272bh"]
+[ext_resource type="Script" uid="uid://bnrct2kilkhqj" path="res://Scripts/player/jogador.gd" id="7_kek77"]
 [ext_resource type="PackedScene" uid="uid://bep3l2760di77" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="8_5vw27"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5vw27"]
@@ -267,17 +268,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3552246, 0, -1.2884369)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012861252, 0.3858621, 0)
 shape = SubResource("CapsuleShape3D_17gy4")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1215585501]
+[node name="Littleboaty" type="CharacterBody3D" parent="." unique_id=1215585501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1931152, 0, 0)
+script = ExtResource("7_kek77")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=218670927]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Littleboaty" unique_id=218670927]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.088976, 0.06904161, -0.8385627)
 shape = SubResource("CapsuleShape3D_d1tgx")
 
-[node name="character-female-a2" parent="CharacterBody3D" unique_id=1193398931 instance=ExtResource("7_272bh")]
+[node name="character-female-a2" parent="Littleboaty" unique_id=1193398931 instance=ExtResource("7_272bh")]
 transform = Transform3D(-0.008376876, 0, -0.15792137, 0, 0.15371925, 0, -0.17820698, 0, 0.007423317, -2.0847168, 0.008666992, -0.83917236)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" unique_id=1760697465]
+[node name="Camera3D" type="Camera3D" parent="Littleboaty" unique_id=1760697465]
 transform = Transform3D(-0.12309548, -0.498163, 0.8583013, 0, 0.86487883, 0.50198066, -0.99239486, 0.06179155, -0.10646267, -1.9099121, 0.13226318, -0.829422)
 
 [node name="CharacterBody3D2" type="CharacterBody3D" parent="." unique_id=443731871]
