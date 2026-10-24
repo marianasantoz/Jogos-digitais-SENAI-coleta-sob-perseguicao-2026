@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://76m2csx3d0v5" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-a.glb" id="7_272bh"]
 [ext_resource type="Script" uid="uid://bnrct2kilkhqj" path="res://Scripts/player/jogador.gd" id="7_kek77"]
 [ext_resource type="PackedScene" uid="uid://bep3l2760di77" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://c6lggkgorrdne" path="res://Scripts/Inimigo/character_body_3d_2.gd" id="9_dg77c"]
 [ext_resource type="PackedScene" uid="uid://wtdji4jwjnha" path="res://assets/models/kenney_mini-characters/Models/GLB format/aid-glasses.glb" id="10_4c57u"]
 [ext_resource type="Script" uid="uid://d3pwmcxx0ohlp" path="res://Scripts/item.gd" id="10_efxa6"]
 
@@ -287,18 +288,17 @@ transform = Transform3D(-0.14, 0, -1.2239188e-08, 0, 0.14, 0, 1.2239188e-08, 0, 
 [node name="Camera3D" type="Camera3D" parent="Littleboaty" unique_id=1760697465]
 transform = Transform3D(0.9857174, -0.08463437, 0.1455954, 0.018348314, 0.91336966, 0.40671757, -0.1674047, -0.39823726, 0.90187734, -2.065531, 0.2032752, -0.71100146)
 
-[node name="CharacterBody3D2" type="CharacterBody3D" parent="." unique_id=443731871]
-transform = Transform3D(0.20787981, 0, 0.9781544, 0, 1, 0, -0.9781544, 0, 0.20787981, 0.8686054, 0, 1.0726026)
+[node name="Inimigo" type="CharacterBody3D" parent="." unique_id=443731871 node_paths=PackedStringArray("pontos_patrulha")]
+transform = Transform3D(0.20787981, 0, 0.9781544, 0, 1, 0, -0.9781544, 0, 0.20787981, -0.09127945, 0, 0.8686055)
+script = ExtResource("9_dg77c")
+pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatrulha/Ponto2"), NodePath("../PontosPatrulha/Ponto3")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2" unique_id=138847216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.086336374, 0.06945801, -0.95893437)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=138847216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07455748, 0)
 shape = SubResource("CapsuleShape3D_3mtt1")
 
-[node name="character-female-f2" parent="CharacterBody3D2" unique_id=1375222633 instance=ExtResource("8_5vw27")]
-transform = Transform3D(0.050954506, 0, -0.17766237, 0, 0.1845653, 0, 0.17150573, 0, 0.052783646, 0.088092804, 0, -0.95910645)
-
-[node name="character-female-f3" parent="CharacterBody3D2" unique_id=259958465 instance=ExtResource("8_5vw27")]
-transform = Transform3D(0.050954506, 0, -0.17766237, 0, 0.1845653, 0, 0.17150573, 0, 0.052783646, 0.088092804, 0, -0.95910645)
+[node name="character-female-f2" parent="Inimigo" unique_id=1375222633 instance=ExtResource("8_5vw27")]
+transform = Transform3D(0.050954506, 0, -0.17766237, 0, 0.1845653, 0, 0.17150573, 0, 0.052783646, 0, 0, 0)
 
 [node name="Itens" type="Node3D" parent="." unique_id=499618117]
 
@@ -411,6 +411,17 @@ shape = SubResource("BoxShape3D_4ba84")
 
 [node name="aid-glasses2" parent="Itens/Item9" unique_id=312644345 instance=ExtResource("10_4c57u")]
 transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="PontosPatrulha" type="Node3D" parent="." unique_id=1591880624]
+
+[node name="Ponto1" type="Marker3D" parent="PontosPatrulha" unique_id=2112159098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021876276, -0.07091141, 1.1883589)
+
+[node name="Ponto2" type="Marker3D" parent="PontosPatrulha" unique_id=813873046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6812186, 0.34300894)
+
+[node name="Ponto3" type="Marker3D" parent="PontosPatrulha" unique_id=1997622637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040345907, 0, 1.1951065)
 
 [connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
 [connection signal="body_entered" from="Itens/Item2" to="Itens/Item2" method="_on_body_entered"]
