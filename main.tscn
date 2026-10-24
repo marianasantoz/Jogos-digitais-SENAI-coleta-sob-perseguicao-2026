@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://76m2csx3d0v5" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-a.glb" id="7_272bh"]
 [ext_resource type="Script" uid="uid://bnrct2kilkhqj" path="res://Scripts/player/jogador.gd" id="7_kek77"]
 [ext_resource type="PackedScene" uid="uid://bep3l2760di77" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-female-f.glb" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://wtdji4jwjnha" path="res://assets/models/kenney_mini-characters/Models/GLB format/aid-glasses.glb" id="10_4c57u"]
+[ext_resource type="Script" uid="uid://d3pwmcxx0ohlp" path="res://Scripts/item.gd" id="10_efxa6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5vw27"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +43,9 @@ height = 0.12939453
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3mtt1"]
 radius = 0.048339844
 height = 0.14624023
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ba84"]
+size = Vector3(0.075683594, 0.04969406, 0.17370605)
 
 [node name="Nana(principal)" type="Node3D" unique_id=193622705]
 
@@ -268,7 +273,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3552246, 0, -1.2884369)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012861252, 0.3858621, 0)
 shape = SubResource("CapsuleShape3D_17gy4")
 
-[node name="Littleboaty" type="CharacterBody3D" parent="." unique_id=1215585501]
+[node name="Littleboaty" type="CharacterBody3D" parent="." unique_id=1215585501 groups=["player"]]
 transform = Transform3D(0.20787981, 0, 0.9781544, 0, 1, 0, -0.9781544, 0, 0.20787981, 1.3245099, 0, -1.0726026)
 script = ExtResource("7_kek77")
 
@@ -291,3 +296,129 @@ shape = SubResource("CapsuleShape3D_3mtt1")
 
 [node name="character-female-f2" parent="CharacterBody3D2" unique_id=1375222633 instance=ExtResource("8_5vw27")]
 transform = Transform3D(0.050954506, 0, -0.17766237, 0, 0.1845653, 0, 0.17150573, 0, 0.052783646, 0.088092804, 0, -0.95910645)
+
+[node name="character-female-f3" parent="CharacterBody3D2" unique_id=259958465 instance=ExtResource("8_5vw27")]
+transform = Transform3D(0.050954506, 0, -0.17766237, 0, 0.1845653, 0, 0.17150573, 0, 0.052783646, 0.088092804, 0, -0.95910645)
+
+[node name="Itens" type="Node3D" parent="." unique_id=499618117]
+
+[node name="Item" type="Area3D" parent="Itens" unique_id=383229424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, 0)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item" unique_id=1436369893]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item" unique_id=1269166856 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item2" type="Area3D" parent="Itens" unique_id=668971519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02846539, 0.04396925, 1.2550571)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item2" unique_id=1571911687]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item2" unique_id=585657525 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item3" type="Area3D" parent="Itens" unique_id=156210530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, 2.2401528)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item3" unique_id=67541016]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item3" unique_id=752874181 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item4" type="Area3D" parent="Itens" unique_id=415026856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, -0.8548775)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item4" unique_id=1852509012]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item4" unique_id=1067243061 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item5" type="Area3D" parent="Itens" unique_id=1469790771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, 0)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item5" unique_id=1710588444]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item5" unique_id=962779067 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item10" type="Area3D" parent="Itens" unique_id=662799291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, -2.9192264)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item10" unique_id=508487557]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item10" unique_id=1769744232 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item6" type="Area3D" parent="Itens" unique_id=1664786779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, -2.4121473)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item6" unique_id=1505454003]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item6" unique_id=1019725918 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item7" type="Area3D" parent="Itens" unique_id=2000734498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, -1.6184266)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item7" unique_id=410313343]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item7" unique_id=28681039 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item8" type="Area3D" parent="Itens" unique_id=1792435137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, 1.727073)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item8" unique_id=1911614631]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item8" unique_id=510025424 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[node name="Item9" type="Area3D" parent="Itens" unique_id=721037881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04396925, 2.7087202)
+script = ExtResource("10_efxa6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Itens/Item9" unique_id=1209267807]
+transform = Transform3D(1, 0, 0, 0, 1, -5.5672986e-06, 0, 5.5672986e-06, 1, -0.0029296875, 0.01817131, -0.006897102)
+shape = SubResource("BoxShape3D_4ba84")
+
+[node name="aid-glasses2" parent="Itens/Item9" unique_id=312644345 instance=ExtResource("10_4c57u")]
+transform = Transform3D(0.25580952, 0, 0, 0, 0.41744402, 0, 0, 0, 0.88997775, 0, 0, 0)
+
+[connection signal="body_entered" from="Itens/Item" to="Itens/Item" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item2" to="Itens/Item2" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item3" to="Itens/Item3" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item4" to="Itens/Item4" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item5" to="Itens/Item5" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item10" to="Itens/Item10" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item6" to="Itens/Item6" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item7" to="Itens/Item7" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item8" to="Itens/Item8" method="_on_body_entered"]
+[connection signal="body_entered" from="Itens/Item9" to="Itens/Item9" method="_on_body_entered"]
