@@ -32,9 +32,9 @@ size = Vector3(0.9966471, 0.281559, 0.11248779)
 [sub_resource type="BoxShape3D" id="BoxShape3D_17gy4"]
 size = Vector3(1.2276049, 0.7437134, 1.0376434)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx1ah"]
-radius = 0.0005
-height = 0.001
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gy4"]
+radius = 0.115722656
+height = 0.43017578
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sx1ah"]
 radius = 0.20986818
@@ -117,7 +117,8 @@ script = ExtResource("4_kek77")
 pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatrulha/Ponto2"), NodePath("../PontosPatrulha/Ponto3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo" unique_id=820717532]
-shape = SubResource("CapsuleShape3D_sx1ah")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19897461, 0)
+shape = SubResource("CapsuleShape3D_17gy4")
 
 [node name="character-male-c2" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-0.49999315, 0, -0.0026179869, 0, 0.5, 0, 0.0026179869, 0, -0.49999315, 0, 0, 0)
