@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cesiu63hbgbm0"]
+
+[ext_resource type="PackedScene" uid="uid://bt2j3leotjaav" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/path-long.glb" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://vnrfq48e6atr" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/fence.glb" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bbtv6l73vr5m4" path="res://assets/models/kenney_city-kit-suburban_20/Models/GLB format/building-type-a.glb" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ca13vgwv4qor7" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-c.glb" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://e7t5dw0jm2pu" path="res://jogador.gd" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bkpqhhwquyyhx" path="res://assets/models/kenney_mini-characters/Models/GLB format/character-male-f.glb" id="5_lquwl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7mycd"]
+sky_material = SubResource("ProceduralSkyMaterial_lquwl")
+
+[sub_resource type="Environment" id="Environment_272bh"]
+background_mode = 2
+sky = SubResource("Sky_7mycd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sx1ah"]
+size = Vector3(1.0635494, 0.001, 6.474432)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1tgx"]
+size = Vector3(0.48468018, 0.27685547, 0.07910156)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17gy4"]
+size = Vector3(1.2113132, 0.49816895, 0.95614624)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sx1ah"]
+radius = 0.15429688
+height = 0.31290817
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gy4"]
+radius = 0.3146057
+height = 0.6292114
+
+[node name="Principal" type="Node3D" unique_id=1982080408]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1879553728]
+environment = SubResource("Environment_272bh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1572137194]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Cenario" type="Node3D" parent="." unique_id=1366448546]
+
+[node name="Chao" type="StaticBody3D" parent="Cenario" unique_id=1415371535]
+
+[node name="path-long2" parent="Cenario/Chao" unique_id=1711797615 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(5.35, 0, 0, 0, 1.12, 0, 0, 0, 16.225, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Chao" unique_id=1063349605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033669919, 0.060889408, 0.0044463873)
+shape = SubResource("BoxShape3D_sx1ah")
+
+[node name="Cerca" type="StaticBody3D" parent="Cenario" unique_id=168168663]
+
+[node name="fence2" parent="Cenario/Cerca" unique_id=103564696 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29258534, 0, 0.18229297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca" unique_id=1298106991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05026245, 0.13549805, 0.18603516)
+shape = SubResource("BoxShape3D_d1tgx")
+
+[node name="Cerca2" type="StaticBody3D" parent="Cenario" unique_id=785305339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45273894, 0, -0.0084866285)
+
+[node name="fence2" parent="Cenario/Cerca2" unique_id=1476343676 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15837133, 0, 0.18229297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Cerca2" unique_id=445269090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16609442, 0.13549805, 0.18603516)
+shape = SubResource("BoxShape3D_d1tgx")
+
+[node name="Casa" type="StaticBody3D" parent="Cenario" unique_id=1425045729]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cenario/Casa" unique_id=274830170]
+transform = Transform3D(1, 0, 0, 0, 0.99745214, 0.07133878, 0, -0.07133878, 0.99745214, -0.003109932, 0.47772655, -0.24271148)
+shape = SubResource("BoxShape3D_17gy4")
+
+[node name="building-type-a3" parent="Cenario/Casa" unique_id=63032633 instance=ExtResource("3_h2yge")]
+transform = Transform3D(0.999972, 0.00733661, -0.0014600543, -0.007336797, 0.99997306, -0.00012270357, 0.0014591139, 0.00013342251, 0.9999989, -0.005520463, 0, -0.8023787)
+
+[node name="Jogador" type="CharacterBody3D" parent="." unique_id=1318557001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23965728, 0, 0.07990539)
+script = ExtResource("4_7mycd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador" unique_id=820717532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012953514, 0.16095638, 0.84819084)
+shape = SubResource("CapsuleShape3D_sx1ah")
+
+[node name="character-male-c2" parent="Jogador" unique_id=976872376 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.9409673)
+
+[node name="Camera3D" type="Camera3D" parent="Jogador" unique_id=1172546221]
+transform = Transform3D(-0.99999243, -0.0012511506, 0.003682233, 0, 0.9468361, 0.32171637, -0.0038889865, 0.32171392, -0.94682896, 0.3913965, 0.37488842, 0.068448186)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Jogador" unique_id=817542823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.2104038)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jogador/CharacterBody3D" unique_id=44491679]
+transform = Transform3D(0.99936813, 0.025415642, 0.024851948, -0.025474451, 0.99967355, 0.0020527635, -0.024791658, -0.0026845513, 0.99968934, 0.4892528, 0.15167075, 1.4764038)
+shape = SubResource("CapsuleShape3D_17gy4")
+
+[node name="Inimigo" parent="Jogador/CharacterBody3D/CollisionShape3D" unique_id=154288169 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.50533104, -0.00026035396, 0.06885105, 2.2398892e-05, 0.50999695, 0.0017641105, -0.06885154, -0.0017449366, 0.50532806, 0.052878633, -0.16114841, 0.3591917)
