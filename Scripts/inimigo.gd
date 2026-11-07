@@ -61,6 +61,8 @@ func  _patrulhar() -> void:
 	if indice_patrulha == pontos_patrulha.size(): 
 		indice_patrulha = 0
 	velocity = direcao.normalized() * velocidade_atual
+	
+	$Modelo/AnimationPlayer.play("walk")
 
 func _perseguir() -> void:
 	var direcao:= referencia_jogador.global_position - global_position 
@@ -68,3 +70,4 @@ func _perseguir() -> void:
 	direcao.y = 0
 	
 	velocity = direcao.normalized() * velocidade_atual
+	$Modelo/AnimationPlayer.play("sprint")

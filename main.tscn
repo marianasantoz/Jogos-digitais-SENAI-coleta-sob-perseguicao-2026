@@ -119,7 +119,7 @@ pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatr
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19897461, 0)
 shape = SubResource("CapsuleShape3D_17gy4")
 
-[node name="character-male-c2" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
+[node name="Modelo" parent="Inimigo" unique_id=976872376 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-0.49999315, 0, -0.0026179869, 0, 0.5, 0, 0.0026179869, 0, -0.49999315, 0, 0, 0)
 
 [node name="AreaDeteccao" type="Area3D" parent="Inimigo" unique_id=1735718407]
@@ -132,7 +132,7 @@ shape = SubResource("SphereShape3D_sx1ah")
 transform = Transform3D(-0.50225216, -1.146467e-10, -0.08856066, -1.1641532e-10, 0.5100002, 0, 0.08856067, 2.0215316e-11, -0.5022521, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Inimigo/AreaCaptura" unique_id=2008535842]
-transform = Transform3D(1, 4.800847e-16, 0, -8.6736174e-19, 0.99999964, -1.07552856e-16, 0, -7.979728e-17, 1, -0.25935626, 0.20343305, -0.8434292)
+transform = Transform3D(1, 4.6533957e-16, 0, -8.6736174e-19, 0.99999964, -1.0408341e-16, 0, -7.632783e-17, 1, 0.17306697, 0.20343307, -0.7671813)
 shape = SubResource("SphereShape3D_17gy4")
 
 [node name="Jogador" type="CharacterBody3D" parent="." unique_id=817542823 groups=["player"]]
