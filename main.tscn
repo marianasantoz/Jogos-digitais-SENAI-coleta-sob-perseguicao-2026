@@ -112,6 +112,7 @@ shape = SubResource("BoxShape3D_17gy4")
 transform = Transform3D(0.999972, 0.00733661, -0.0014600543, -0.007336797, 0.99997306, -0.00012270357, 0.0014591139, 0.00013342251, 0.9999989, -0.005520463, 0, -1.7428256)
 
 [node name="Inimigo" type="CharacterBody3D" parent="." unique_id=1318557001 node_paths=PackedStringArray("pontos_patrulha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23965728, 0, 0.07990539)
 script = ExtResource("4_kek77")
 pontos_patrulha = [NodePath("../PontosPatrulha/Ponto1"), NodePath("../PontosPatrulha/Ponto2"), NodePath("../PontosPatrulha/Ponto3")]
 

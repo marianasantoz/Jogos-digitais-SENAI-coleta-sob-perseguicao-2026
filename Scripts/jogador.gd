@@ -5,6 +5,10 @@ const VELOCIDADE := 2.0
 const GRAVIDADE := 2.0
 
 func _physics_process(delta: float) -> void:
+	if GameManager.jogador_capturado:
+		$Modelo/AnimationPlayer.play("die")
+		GameManager.jogador_capturado = false
+	
 	if GameManager.jogo_encerrado:
 		return 
 	
@@ -25,5 +29,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor(): 
 	
 		velocity.y -= GRAVIDADE * delta
+		$Modelo/AnimationPlayer.play("fall")
  
 	move_and_slide()
